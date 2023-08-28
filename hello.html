@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta content="initial-scale=1, maximum-scale=1, user-scalable=0" name="viewport" />
+  <meta name="viewport" content="width=device-width" />
+
+  <!-- Datatable plugin CSS file -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css" />
+
+  <!-- jQuery library file -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+  <!-- Datatable plugin JS library file -->
+  <script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+</head>
+
+<body>
+  <h2>How to demonstrate the use of Ajax loading data in DataTables</h2>
+
+  <!-- HTML table with employee data -->
+  <table id="tableID" class="display" style="width: 100%">
+    <thead>
+      <!-- Column headers with employee data -->
+      <tr>
+        <th>EmployeeID</th>
+        <th>Name</th>
+        <th>Designation</th>
+        <th>Salary</th>
+        <th>Address</th>
+        <th>City</th>
+      </tr>
+    </thead>
+  </table>
+
+  <script>
+    /* Initialization of datatable */
+    $(document).ready(function () {
+      /* Datatable access by using table ID */
+      
+    });
+
+    setTimeout(() => {
+      $("#tableID").DataTable({
+        info: false,
+        paging: false,
+        ajax: "index.php",
+        columns: [
+          { data: "employee_id" },
+          { data: "name" },
+          { data: "designation" },
+          { data: "salary" },
+          { data: "address" },
+          { data: "city" },
+        ],
+      });
+    }, 5000);
+  </script>
+</body>
+
+</html>
